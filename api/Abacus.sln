@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abacus.Web", "Abacus.Web\Abacus.Web.csproj", "{61BDF16B-7786-4E22-8452-4C11B6B8D3FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abacus.Account", "Abacus.Account\Abacus.Account.csproj", "{FA0D23F3-9810-4CEB-B323-47981136028A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abacus.Calculator", "Abacus.Calculator\Abacus.Calculator.csproj", "{2BB0571E-0826-498F-B9E5-243A2A46DB75}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abacus.Service", "Abacus.Service\Abacus.Service.csproj", "{26D7A31A-DF22-40E9-B802-3DF2560364C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abacus.Repository", "Abacus.Repository\Abacus.Repository.csproj", "{8F0AC023-895B-4BAD-ABAE-4AE15C44CEFA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abacus.Data", "Abacus.Data\Abacus.Data.csproj", "{B0267283-66EC-4169-9F56-EF7E2D9EF38A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abacus.Common", "Abacus.Common\Abacus.Common.csproj", "{72946639-0FF0-4DA2-8251-C32DA7953E95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +21,30 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{61BDF16B-7786-4E22-8452-4C11B6B8D3FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{61BDF16B-7786-4E22-8452-4C11B6B8D3FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{61BDF16B-7786-4E22-8452-4C11B6B8D3FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{61BDF16B-7786-4E22-8452-4C11B6B8D3FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA0D23F3-9810-4CEB-B323-47981136028A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA0D23F3-9810-4CEB-B323-47981136028A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA0D23F3-9810-4CEB-B323-47981136028A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA0D23F3-9810-4CEB-B323-47981136028A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BB0571E-0826-498F-B9E5-243A2A46DB75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BB0571E-0826-498F-B9E5-243A2A46DB75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BB0571E-0826-498F-B9E5-243A2A46DB75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BB0571E-0826-498F-B9E5-243A2A46DB75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26D7A31A-DF22-40E9-B802-3DF2560364C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26D7A31A-DF22-40E9-B802-3DF2560364C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26D7A31A-DF22-40E9-B802-3DF2560364C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26D7A31A-DF22-40E9-B802-3DF2560364C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F0AC023-895B-4BAD-ABAE-4AE15C44CEFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F0AC023-895B-4BAD-ABAE-4AE15C44CEFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F0AC023-895B-4BAD-ABAE-4AE15C44CEFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F0AC023-895B-4BAD-ABAE-4AE15C44CEFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0267283-66EC-4169-9F56-EF7E2D9EF38A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0267283-66EC-4169-9F56-EF7E2D9EF38A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0267283-66EC-4169-9F56-EF7E2D9EF38A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0267283-66EC-4169-9F56-EF7E2D9EF38A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72946639-0FF0-4DA2-8251-C32DA7953E95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72946639-0FF0-4DA2-8251-C32DA7953E95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72946639-0FF0-4DA2-8251-C32DA7953E95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72946639-0FF0-4DA2-8251-C32DA7953E95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

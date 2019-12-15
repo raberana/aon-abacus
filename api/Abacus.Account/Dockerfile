@@ -7,16 +7,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["Abacus.Web/Abacus.Web.csproj", "Abacus.Web/"]
-RUN dotnet restore "Abacus.Web/Abacus.Web.csproj"
+COPY ["Abacus.Account/Abacus.Account.csproj", "Abacus.Account/"]
+RUN dotnet restore "Abacus.Account/Abacus.Account.csproj"
 COPY . .
-WORKDIR "/src/Abacus.Web"
-RUN dotnet build "Abacus.Web.csproj" -c Release -o /app/build
+WORKDIR "/src/Abacus.Account"
+RUN dotnet build "Abacus.Account.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Abacus.Web.csproj" -c Release -o /app/publish
+RUN dotnet publish "Abacus.Account.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Abacus.Web.dll"]
+ENTRYPOINT ["dotnet", "Abacus.Account.dll"]

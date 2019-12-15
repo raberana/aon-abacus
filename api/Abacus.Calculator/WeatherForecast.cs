@@ -1,6 +1,6 @@
 using System;
 
-namespace Abacus.Web
+namespace Abacus.Calculator
 {
     public class WeatherForecast
     {

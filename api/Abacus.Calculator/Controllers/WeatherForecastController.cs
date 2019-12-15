@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace Abacus.Web.Controllers
+namespace Abacus.Calculator.Controllers
 {
     [ApiController]
     [Route("[controller]")]
