@@ -1,0 +1,52 @@
+#home-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+
+  & > div {
+    height: 100%;
+  }
+
+  #home-sec1 {
+    flex: 1;
+
+    & > div {
+      top: 50%;
+      position: relative;
+      transform: translate(20%, -50%);
+
+      #title {
+        font-size: 70px;
+        font-weight: 900;
+      }
+
+      #sub-title {
+        font-size: 30px;
+      }
+
+      #actions-container {
+        display: inline-flex;
+
+        button {
+          margin-right: 10px;;
+        }
+      }
+    }
+  }
+
+  #home-sec2 {
+    flex: 1;
+    position: relative;
+    background: rgb(29, 44, 145);
+    background: linear-gradient(218deg, rgba(29, 44, 145, 1) 31%, rgba(39, 79, 255, 1) 100%);
+    overflow: hidden;
+
+    img {
+      width: 110%;
+      position: absolute;
+      bottom: 0;
+      transform: translateX(-5%);
+    }
+  }
+}
