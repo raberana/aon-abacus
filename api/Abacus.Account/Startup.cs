@@ -53,6 +53,8 @@ namespace Abacus.Account
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Abacus V1");
             });
 
+            app.UseCors("CorsPolicy");
+
             app.UseRouting();
 
             app.UseAuthentication();

@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abacus.Repository", "Abacus
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abacus.Data", "Abacus.Data\Abacus.Data.csproj", "{B0267283-66EC-4169-9F56-EF7E2D9EF38A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abacus.Common", "Abacus.Common\Abacus.Common.csproj", "{72946639-0FF0-4DA2-8251-C32DA7953E95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abacus.Common", "Abacus.Common\Abacus.Common.csproj", "{72946639-0FF0-4DA2-8251-C32DA7953E95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RESTServices", "RESTServices", "{7C125889-183F-4726-9747-C85778498D9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +50,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FA0D23F3-9810-4CEB-B323-47981136028A} = {7C125889-183F-4726-9747-C85778498D9E}
+		{2BB0571E-0826-498F-B9E5-243A2A46DB75} = {7C125889-183F-4726-9747-C85778498D9E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {714262CA-E034-4FF9-A8FD-04AFE47934BD}

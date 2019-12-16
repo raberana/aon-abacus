@@ -1,14 +1,16 @@
+@import "abacus-colors";
 
-$button-background-color: #028fba;
+$button-background-color: $abacus-color-primary;
 $button-color: white;
 $button-hover-color: white;
 $button-focus-color: white;
 $button-active-color: white;
+$button-disabled-background-color:rgba($abacus-color-primary, 0.9);
 
 $label-weight: 400;
-$label-color: #028fba;
+$label-color: $abacus-color-primary;
 
-$input-focus-border-color: #028fba;
+$input-focus-border-color: $abacus-color-primary;
 
 @import "bulma/sass/utilities/_all.sass";
 

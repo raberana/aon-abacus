@@ -1,3 +1,5 @@
+@import "abacus-colors";
+
 #login-container {
   display: flex;
   height: 100%;
@@ -15,7 +17,7 @@
     overflow: hidden;
     text-align: center;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(94, 232, 169, 0.53), rgba(3, 144, 187, 0.83)),
+    background: linear-gradient(to bottom, rgba($abacus-color-secondary, 0.53), rgba($abacus-color-primary, 0.83)),
       url(/assets/images/login-bg.jpg) no-repeat center;
     background-size: cover;
 
@@ -36,7 +38,7 @@
       }
 
       img {
-        height: 100px;
+        height: 60px;
       }
     }
   }
@@ -44,7 +46,7 @@
   #login-sec2 {
     flex: 1;
 
-    & > div {
+    & > form {
       top: 50%;
       position: relative;
       transform: translateY(-50%);
@@ -57,7 +59,7 @@
 
       #title {
         font-size: 50px;
-        background-color: #028fba;
+        background-color: $abacus-color-primary;
         color: white;
         display: table;
         padding: 5px 10px;
@@ -67,7 +69,7 @@
 
       #sub-title {
         font-size: 30px;
-        color: lightgray;
+        color: gray;
       }
 
       #actions-container {

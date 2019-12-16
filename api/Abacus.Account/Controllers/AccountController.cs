@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Abacus.Account.Models;
+using Abacus.Common;
+using Abacus.Data.Models;
 using Abacus.Service.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -25,18 +27,16 @@ namespace Abacus.Account.Controllers
         [HttpGet, Route("{username}")]
         public async Task<IActionResult> GetUser(string username)
         {
-            return this.Ok(await this._userService.GetUser(username));
+            return this.Ok(new UserModel(await this._userService.GetUser(username), string.Empty));
         }
 
         [AllowAnonymous]
         [HttpPost, Route("login")]
         public async Task<IActionResult> Login([FromBody]LoginRequestModel model)
         {
-            var result = await this._userService.AuthenticateUser(model.Username, model.Password);
+            var authenticationResult = await this._userService.AuthenticateUser(model.Username, model.Password);
 
-            result.User.Password = null;
-
-            return this.Ok(result.User);
+            return this.Ok(new UserModel(authenticationResult.User, authenticationResult.Token));
         }
     }
 }
