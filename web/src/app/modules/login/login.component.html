@@ -1,22 +1,29 @@
 <div id="login-container">
     <div id="login-sec1">
-
-        <div id="footer">
-            <div>Contact Us</div>
-            <div>Legal</div>
-            <div>
-                <img src="assets/images/aon-logo.png" />
-            </div>
+        <div class="footer">
+            <div class="title">Aon Commercial Risk</div>
+            <div class="title">Pricing Tool</div>
         </div>
     </div>
     <div id="login-sec2">
+        <div class="header">
+            <div>
+                <span>ACIA</span> 
+                <span>Client Solutions</span> 
+                <span>Legal</span> 
+                <span>Contact us</span>
+            </div>
+            <div>
+                Need help?
+            </div>
+        </div>
         <form (ngSubmit)="login()" [formGroup]="loginForm">
-            <div id="title">Aon</div>
-            <div id="title">Commercial Risk</div>
-            <div id="title">Pricing Tool</div>
+            <div>
+                <img src="assets/images/aon-logo.png" />
+            </div>
             <br />
-            <div id="sub-title">ready to empower results?</div>
-            <br />
+            <div class="sub-title">ready to empower results?</div>
+            <div class="sub-title">sign in</div>
             <br />
             <br />
             <div class="field">
@@ -40,5 +47,8 @@
                 </p>
             </div>
         </form>
+        <div class="footer">
+            Forgot your password? &nbsp; <span>Click Here</span>
+        </div>
     </div>
 </div>

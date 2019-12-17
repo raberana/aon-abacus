@@ -6,11 +6,13 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./modules/main/main.module').then(mod => mod.MainModule),
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard], 
+    data: { animation: 'PageMain' }
   },
   {
     path: 'login',
-    loadChildren: () => import('./modules/login/login.module').then(mod => mod.LoginModule)
+    loadChildren: () => import('./modules/login/login.module').then(mod => mod.LoginModule), 
+    data: { animation: 'PageLogin' }
   },
   {
     path: '',

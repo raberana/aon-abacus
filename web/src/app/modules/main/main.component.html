@@ -1,4 +1,33 @@
-<!-- https://angular.io/guide/route-animations -->
-<div [@routeAnimations]="prepareRoute(outlet)">
-    <router-outlet #outlet="outlet"></router-outlet>
+<div id="main-container" [@routeAnimations]="prepareRoute(outlet)">
+    <div id="main-sidebar">
+        <div id="main-sidebar-logo">
+            <img src="assets/images/aon-logo.png" />
+        </div>
+        <div id="main-sidebar-menu">
+            <div>
+                <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <fa-icon [icon]="faHome"></fa-icon>
+                </a>
+            </div>
+            <div>
+                <a routerLink="/pricing/new" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <fa-icon [icon]="faCalculator"></fa-icon>
+                </a>
+            </div>
+            <div>
+                <a routerLink="/settings" routerLinkActive="active">
+                    <fa-icon [icon]="faCog"></fa-icon>
+                </a>
+            </div>
+        </div>
+
+        <div id="main-sidebar-submenu">
+            <div (click)="logout()">
+                <fa-icon [icon]="faSignOutAlt"></fa-icon>
+            </div>
+        </div>
+    </div>
+    <div id="main-content">
+        <router-outlet #outlet="outlet"></router-outlet>
+    </div>
 </div>

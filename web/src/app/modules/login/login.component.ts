@@ -31,7 +31,12 @@ export class LoginComponent implements OnInit {
     this._userService.login(this.loginForm.get('username').value, this.loginForm.get('password').value)
       .subscribe(i => {
         this._userService.currentUser = i;
+        localStorage.setItem('abacus-user', JSON.stringify(i));
         this._router.navigateByUrl('/');
       });
+  }
+
+  logout() {
+    localStorage.clear();
   }
 }

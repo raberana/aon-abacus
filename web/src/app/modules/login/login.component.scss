@@ -12,7 +12,7 @@
   }
 
   #login-sec1 {
-    flex: 1;
+    flex: 1.2;
     position: relative;
     overflow: hidden;
     text-align: center;
@@ -21,55 +21,90 @@
       url(/assets/images/login-bg.jpg) no-repeat center;
     background-size: cover;
 
-    #footer {
+    .footer {
       position: absolute;
-      bottom: 20px;
-      right: 20px;
-      display: inline-flex;
+      bottom: 10%;
+      left: 40px;
       align-items: center;
       justify-content: center;
       font-weight: 400;
 
-      & > div {
-        color: white;
-        font-size: 16px;
-        margin: 0 10px;
-        text-transform: uppercase;
-      }
-
-      img {
-        height: 60px;
-      }
-    }
-  }
-
-  #login-sec2 {
-    flex: 1;
-
-    & > form {
-      top: 50%;
-      position: relative;
-      transform: translateY(-50%);
-      margin: 0 auto;
-      width: 60%;
-
-      img {
-        width: 200px;
-      }
-
-      #title {
+      .title {
         font-size: 50px;
-        background-color: $abacus-color-primary;
         color: white;
         display: table;
         padding: 5px 10px;
         margin: 5px 0;
         font-family: "Bitter", serif;
       }
+    }
+  }
 
-      #sub-title {
+  #login-sec2 {
+    flex: 0.8;
+    position: relative;
+
+    .header,
+    .footer {
+      position: absolute;
+      width: 100%;
+      display: inline-flex;
+    }
+
+    .header {
+      top: 0;
+      left: 0;
+      padding: 20px;
+      border-bottom: 1.5px solid $abacus-color-grey;
+      align-items: center;
+      justify-content: center;
+
+      div {
+        flex: 1;
+      }
+
+      div:first-child {
+        span {
+          margin-right: 20px;
+          cursor: pointer;
+        }
+      }
+
+      div:last-child {
+        color: $abacus-color-primary;
+        cursor: pointer;
+        text-align: right;
+      }
+    }
+
+    .footer {
+      bottom: 0;
+      left: 0;
+      padding: 20px;
+      border-top: 1.5px solid $abacus-color-grey;
+      text-align: center;
+      justify-content: center;
+
+      span {
+        color: $abacus-color-primary;
+        cursor: pointer;
+      }
+    }
+
+    form {
+      top: 50%;
+      position: relative;
+      transform: translateY(-50%);
+      margin: 0 auto;
+      width: 70%;
+
+      img {
+        height: 100px;
+      }
+
+      .sub-title {
         font-size: 30px;
-        color: gray;
+        color: #adb9c5;
       }
 
       #actions-container {

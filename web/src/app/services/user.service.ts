@@ -13,7 +13,9 @@ export class UserService {
 
     currentUser: UserModel = null;
 
-    constructor(private _httpClient: HttpClient) { }
+    constructor(private _httpClient: HttpClient) {
+        this.currentUser = localStorage.getItem('abacus-user') != undefined ? <UserModel>(JSON.parse(localStorage.getItem('abacus-user'))) : null;
+    }
 
     getUser(username: string): Observable<UserModel> {
         const url = `${environment.apiAccountBaseUrl}/api/account/${username}`;
