@@ -1,0 +1,25 @@
+.form-container {
+  width: 80%;
+  position: relative;
+  margin: 5% auto;
+
+  form {
+    #field-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      & > div {
+          margin-right: 50px;
+          min-width: 360px;
+      }
+    }
+  }
+}
+
+#actions-container {
+  display: inline-flex;
+
+  button {
+    margin-right: 10px;
+  }
+}

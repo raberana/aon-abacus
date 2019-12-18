@@ -1,0 +1,22 @@
+<div class="form-container">
+    <form [formGroup]="insuranceScheduleForm">
+        <div id="field-container">
+            <ng-container *ngFor="let field of sectionSchema.fields">
+                <div>
+                    <abacus-generic-field [field]="field" [formGroup]="insuranceScheduleForm"></abacus-generic-field>
+                    <br />
+                </div>
+            </ng-container>
+        </div>
+    </form>
+    <br />
+    <div id="actions-container">
+        <button class="button" (click)="add()">Add record</button>
+        <button class="button is-white" (click)="clear()">Clear</button>
+    </div>
+    <div id="records-container">
+        <div class="record" *ngFor="let record of metadata">
+          
+        </div>
+    </div>
+</div>

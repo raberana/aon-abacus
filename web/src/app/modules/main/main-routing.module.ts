@@ -13,7 +13,7 @@ const routes: Routes = [
         data: { animation: 'PageHome' }
       },
       {
-        path: 'pricing/new',
+        path: 'pricing',
         loadChildren: () => import('./modules/workspace/workspace.module').then(mod => mod.WorkspaceModule),
         data: { animation: 'PagePricing' }
       }

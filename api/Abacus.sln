@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abacus.Common", "Abacus.Com
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RESTServices", "RESTServices", "{7C125889-183F-4726-9747-C85778498D9E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abacus.ReferentialLookup", "Abacus.ReferentialLookup\Abacus.ReferentialLookup.csproj", "{AFFE4A06-764A-4330-998F-87913E1B8165}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{72946639-0FF0-4DA2-8251-C32DA7953E95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72946639-0FF0-4DA2-8251-C32DA7953E95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72946639-0FF0-4DA2-8251-C32DA7953E95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFFE4A06-764A-4330-998F-87913E1B8165}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFFE4A06-764A-4330-998F-87913E1B8165}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFFE4A06-764A-4330-998F-87913E1B8165}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFFE4A06-764A-4330-998F-87913E1B8165}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +60,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{FA0D23F3-9810-4CEB-B323-47981136028A} = {7C125889-183F-4726-9747-C85778498D9E}
 		{2BB0571E-0826-498F-B9E5-243A2A46DB75} = {7C125889-183F-4726-9747-C85778498D9E}
+		{AFFE4A06-764A-4330-998F-87913E1B8165} = {7C125889-183F-4726-9747-C85778498D9E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {714262CA-E034-4FF9-A8FD-04AFE47934BD}

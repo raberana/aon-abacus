@@ -15,7 +15,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
-namespace Abacus.Calculator
+namespace Abacus.ReferentialLookup
 {
     public class Startup
     {
@@ -56,7 +56,7 @@ namespace Abacus.Calculator
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Abacus Calculator V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Abacus Referential Lookup V1");
             });
 
             app.UseCors("CorsPolicy");

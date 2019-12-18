@@ -1,6 +1,8 @@
 ﻿using Abacus.Common;
 using Abacus.Repository;
 using Abacus.Repository.Interfaces;
+using Abacus.Service;
+using Abacus.Service.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,7 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Abacus.Calculator
+namespace Abacus.ReferentialLookup
 {
     public static class ServiceExtensions
     {
@@ -53,7 +55,7 @@ namespace Abacus.Calculator
         {
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Abacus Calculator API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Abacus Referential Lookup API", Version = "v1" });
 
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
@@ -80,6 +82,8 @@ namespace Abacus.Calculator
         public static void ConfigureDataAccessLayers(this IServiceCollection services)
         {
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+
+            services.AddTransient<IReferentialLookupService, ReferentialLookupService>();
         }
     }
 }

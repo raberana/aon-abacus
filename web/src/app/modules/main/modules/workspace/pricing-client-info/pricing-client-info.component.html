@@ -1,0 +1,11 @@
+<div class="form-container">
+    <form [formGroup]="pricingForm">
+        <ng-container *ngFor="let field of sectionSchema.fields">
+            <abacus-generic-field [field]="field" [formGroup]="pricingForm"></abacus-generic-field>
+            <br />
+        </ng-container>
+    </form>
+    <div (click)="get()">
+        <button class="button">GET</button>
+    </div>
+</div>

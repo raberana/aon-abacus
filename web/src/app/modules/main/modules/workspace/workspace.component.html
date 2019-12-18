@@ -1,3 +1,23 @@
 <div id="pricing-container">
-    PRICING
+    <div id="pricing-container-summary">
+        <div (click)="next()">NEXT</div>
+    </div>
+    <div id="pricing-container-details" *ngIf="pricingSchema">
+
+        <div id="pricing-form">
+            <div id="pricing-form-1" [ngClass]="{'active': page==1}">
+                    <abacus-pricing-client-info [metadata]="pricingData[pricingSchema.sections[0].name]"
+                        [sectionSchema]="pricingSchema.sections[0]"></abacus-pricing-client-info>
+
+            </div>
+            <div id="pricing-form-2" [ngClass]="{'active': page==2}">
+                    <abacus-pricing-insurance-schedule [metadata]="pricingData[pricingSchema.sections[1].name]"
+                        [sectionSchema]="pricingSchema.sections[1]"></abacus-pricing-insurance-schedule>
+
+            </div>
+            <div id="pricing-form-3" [ngClass]="{'active': page==3}">
+                C
+            </div>
+        </div>
+    </div>
 </div>

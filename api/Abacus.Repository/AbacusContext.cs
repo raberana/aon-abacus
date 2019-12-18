@@ -15,15 +15,12 @@ namespace Abacus.Repository
         }
 
         public DbSet<Client> Clients { get; set; }
-        public DbSet<ClientPricing> ClientPricings { get; set; }
         public DbSet<ReferentialLookup> ReferentialLookups { get; set; }
         public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ClientConfiguration());
-
-            modelBuilder.ApplyConfiguration(new ClientPricingConfiguration());
         }
     }
 }

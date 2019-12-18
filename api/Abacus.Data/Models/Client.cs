@@ -12,7 +12,9 @@ namespace Abacus.Data.Models
     {
         public Guid ClientId { get; set; }
 
-        public JObject ClientData { get; set; }
+        public JObject ClientPricingInputData { get; set; }
+
+        public JObject ClientPricingOutputData { get; set; }
 
         public Client()
         {
@@ -24,7 +26,11 @@ namespace Abacus.Data.Models
     {
         public void Configure(EntityTypeBuilder<Client> builder)
         {
-            builder.Property(e => e.ClientData).HasConversion(
+            builder.Property(e => e.ClientPricingInputData).HasConversion(
+                v => v.ToString(),
+                v => JObject.Parse(v));
+
+            builder.Property(e => e.ClientPricingOutputData).HasConversion(
                 v => v.ToString(),
                 v => JObject.Parse(v));
 

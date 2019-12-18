@@ -22,6 +22,7 @@ export class MainComponent implements OnInit {
   constructor(private _userService: UserService, private _router: Router) { }
 
   ngOnInit() {
+    if (!this._userService.currentUser) { this.logout(); }
   }
 
   prepareRoute(outlet: RouterOutlet) {
