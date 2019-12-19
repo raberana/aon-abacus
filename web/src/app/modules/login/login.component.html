@@ -26,6 +26,7 @@
             <div class="sub-title">sign in</div>
             <br />
             <br />
+            <div *ngIf="invalidLogin" class="error">Invalid username/password</div>
             <div class="field">
                 <label class="label">User Name</label>
                 <div class="control">

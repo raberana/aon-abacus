@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  invalidLogin: boolean;
 
   constructor(private _userService: UserService, private _router: Router) {
 
@@ -35,6 +36,9 @@ export class LoginComponent implements OnInit {
     this._userService.login(this.loginForm.get('username').value, this.loginForm.get('password').value)
       .subscribe(u => {
         if (u) { this._router.navigateByUrl('/'); }
+        else {
+          this.invalidLogin = true;
+        }
       });
   }
 

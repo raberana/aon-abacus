@@ -32,8 +32,10 @@ export class UserService {
 
         return this._httpClient.post<UserModel>(url, { username, password })
             .pipe(tap(u => {
-                this.currentUser = u;
-                localStorage.setItem('abacus-user', JSON.stringify(u));
+                if (u) {
+                    this.currentUser = u;
+                    localStorage.setItem('abacus-user', JSON.stringify(u));
+                }
             }));
     }
 
