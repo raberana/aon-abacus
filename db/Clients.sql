@@ -1,0 +1,29 @@
+USE [Abacus]
+GO
+
+/****** Object:  Table [dbo].[Clients]    Script Date: 12/20/2019 6:16:44 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Clients](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[ClientId] [uniqueidentifier] NOT NULL,
+	[CreatedDate] [datetimeoffset](7) NOT NULL,
+	[ModifiedDate] [datetimeoffset](7) NULL,
+	[ClientPricingInputData] [nvarchar](max) NOT NULL,
+	[ClientPricingOutputData] [nvarchar](max) NULL,
+ CONSTRAINT [PK_Clients] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [IX_UniqueClientId] UNIQUE NONCLUSTERED 
+(
+	[ClientId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
