@@ -1,3 +1,5 @@
+@import "abacus-colors";
+
 .form-container {
   width: 80%;
   position: relative;
@@ -8,9 +10,15 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
+
       & > div {
-          margin-right: 50px;
-          min-width: 360px;
+        margin-right: 50px;
+        min-width: 360px;
+      }
+
+      .field-hidden {
+        position: absolute;
+        z-index: -1000;
       }
     }
   }
@@ -21,5 +29,52 @@
 
   button {
     margin-right: 10px;
+  }
+
+  .button.done {
+    margin-left: 50px;
+  }
+}
+
+#records-container {
+  width: 100%;
+
+  .record {
+    width: 100%;
+    display: inline-flex;
+    background-color: rgba($abacus-color-grey, 0.5);
+    align-items: center;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+    .record-business {
+      flex: 2;
+
+      & > div:first-child {
+        font-weight: 900;
+        font-size: 25px;
+      }
+      & > div:last-child {
+        span {
+          color: grey;
+        }
+      }
+    }
+
+    .record-rem,
+    .record-policy,
+    .record-premium {
+      flex: 1;
+
+      & > div:first-child {
+        font-size: 19px;
+        font-weight: 900;
+      }
+
+      & > div:last-child {
+        color: grey;
+      }
+    }
   }
 }

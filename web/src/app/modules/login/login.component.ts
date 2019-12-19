@@ -16,6 +16,10 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.buildForm();
+  }
+
+  buildForm() {
     this.loginForm = new FormGroup({
       username: new FormControl('', [
         Validators.required
@@ -29,10 +33,8 @@ export class LoginComponent implements OnInit {
 
   login() {
     this._userService.login(this.loginForm.get('username').value, this.loginForm.get('password').value)
-      .subscribe(i => {
-        this._userService.currentUser = i;
-        localStorage.setItem('abacus-user', JSON.stringify(i));
-        this._router.navigateByUrl('/');
+      .subscribe(u => {
+        if (u) { this._router.navigateByUrl('/'); }
       });
   }
 

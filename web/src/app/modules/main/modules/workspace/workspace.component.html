@@ -1,22 +1,40 @@
 <div id="pricing-container">
     <div id="pricing-container-summary">
-        <div (click)="next()">NEXT</div>
+        <div class="workspace-title">
+            <div *ngFor="let d of currentStep.description">
+                {{d}}
+                <hr />
+            </div>
+        </div>
+        <div class="workspace-image">
+            <img [src]="currentStep.image" />
+        </div>
+        <div class="workspace-action">
+            <div>
+                <ng-container *ngFor="let step of steps">
+                    <div [ngClass]="{'active': step.step == currentStep.step}" (click)="goStep(step)">{{step.title}}
+                    </div>
+                </ng-container>
+            </div>
+        </div>
     </div>
     <div id="pricing-container-details" *ngIf="pricingSchema">
 
         <div id="pricing-form">
-            <div id="pricing-form-1" [ngClass]="{'active': page==1}">
-                    <abacus-pricing-client-info [metadata]="pricingData[pricingSchema.sections[0].name]"
-                        [sectionSchema]="pricingSchema.sections[0]"></abacus-pricing-client-info>
-
+            <div id="pricing-form-1" [ngClass]="{'active': currentStep.step==1}">
+                <abacus-pricing-client-info [metadata]="pricingData[pricingSchema.sections[0].name]"
+                    [sectionSchema]="pricingSchema.sections[0]" (save)="onSave(pricingSchema.sections[0].name, $event)">
+                </abacus-pricing-client-info>
             </div>
-            <div id="pricing-form-2" [ngClass]="{'active': page==2}">
-                    <abacus-pricing-insurance-schedule [metadata]="pricingData[pricingSchema.sections[1].name]"
-                        [sectionSchema]="pricingSchema.sections[1]"></abacus-pricing-insurance-schedule>
 
+            <div id="pricing-form-2" [ngClass]="{'active': currentStep.step==2}">
+                <abacus-pricing-insurance-schedule [metadata]="pricingData[pricingSchema.sections[1].name]"
+                    [sectionSchema]="pricingSchema.sections[1]" (save)="onSave(pricingSchema.sections[1].name, $event)">
+                </abacus-pricing-insurance-schedule>
             </div>
-            <div id="pricing-form-3" [ngClass]="{'active': page==3}">
-                C
+            
+            <div id="pricing-form-3" [ngClass]="{'active': currentStep.step==3}">
+                <abacus-pricing-summary [price-input]="pricingData" [calculation-trigger]="calculationTrigger"></abacus-pricing-summary>
             </div>
         </div>
     </div>

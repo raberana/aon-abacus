@@ -15,9 +15,9 @@ export class CalculatorService {
     constructor(private _httpClient: HttpClient) {
     }
 
-    getReferentialLookup(category: string): Observable<ReferentialLookupModel[]> {
-        const url = `${environment.apiReferentialLookupBaseUrl}/api/referential-lookup/${category}`;
+    calculate(priceInput: any): Observable<any> {
+        const url = `${environment.apiCalculatorBaseUrl}/api/calculator/price-calculation`;
 
-        return this._httpClient.get<ReferentialLookupModel[]>(url);
+        return this._httpClient.post<any>(url, priceInput);
     }
 }

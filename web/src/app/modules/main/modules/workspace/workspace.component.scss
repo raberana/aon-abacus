@@ -9,6 +9,71 @@
   #pricing-container-summary {
     height: 100%;
     width: 30%;
+    position: relative;
+
+    .workspace-title {
+      position: absolute;
+      top: 100px;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 18px;
+      font-family: "Bitter";
+      color: gray;
+      padding: 0 50px;
+      box-sizing: border-box;
+      text-align: center;
+      line-height: 1.5em;
+
+      & > div:last-child {
+        hr {
+          display: none;
+        }
+      }
+    }
+
+    .workspace-image {
+      top: 50%;
+      position: relative;
+      transform: translateY(-50%);
+      margin: 0 auto;
+      width: 70%;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .workspace-action {
+      position: absolute;
+      bottom: 70px;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+
+      & > div {
+        display: inline-flex;
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+        align-items: center;
+
+        div {
+          text-align: center;
+          font-size: 18px;
+          font-family: "Bitter";
+          margin: 0 10px;
+          flex: 1;
+          cursor: pointer;
+          text-transform: uppercase;
+          color: grey;
+        }
+
+        div.active {
+          color: $abacus-color-primary;
+        }
+      }
+    }
   }
 
   #pricing-container-details {
@@ -39,7 +104,6 @@
       #pricing-form-2.active,
       #pricing-form-3.active {
         display: block;
-
       }
     }
   }

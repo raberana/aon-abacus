@@ -102,14 +102,7 @@ namespace Abacus.Service
         {
             var user = await this.GetUser(username);
 
-            if (user == null) { throw new Exception("User does not exists"); }
-
-            if (string.IsNullOrEmpty(user.Password))
-            {
-                user.Password = this.HashPassword(password);
-
-                await this._userRepository.Update(user);
-            }
+            if (user == null) { return (null, null); }
 
             var authResult = this.ValidatePassword(user.Password, password);
 

@@ -1,5 +1,14 @@
 .form-container {
   width: 80%;
   position: relative;
-  margin: 5% auto;
+  margin: 0 auto;
+  height: 100%;
+
+  & > div {
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    position: absolute;
+    width: 100%;
+  }
 }

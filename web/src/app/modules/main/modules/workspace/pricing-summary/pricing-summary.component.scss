@@ -1,0 +1,107 @@
+@import "abacus-colors";
+
+#summary-container {
+  width: 100%;
+  height: 100%;
+
+  & > div {
+    width: 90%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+
+    h1 {
+      text-transform: uppercase;
+      font-family: "Bitter";
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+    }
+
+    .target-prices {
+      display: inline-flex;
+      width: 100%;
+
+      .price {
+        flex: 1;
+        border: 1px solid $abacus-color-primary;
+        border-radius: 5px;
+        margin: 0 10px;
+
+        & > div {
+          padding: 10px;
+          text-align: center;
+
+          .value {
+            color: $abacus-color-primary;
+            font-size: 25px;
+            font-weight: 900;
+          }
+          .label {
+            font-size: 14px;
+            color: grey;
+          }
+        }
+
+        &-name {
+          background-color: $abacus-color-primary;
+          color: white;
+          font-weight: 900;
+          text-transform: uppercase;
+        }
+
+        &-estimate {
+          color: black;
+        }
+
+        &-yield-estimate {
+          color: black;
+        }
+
+        &-client-variance.negative {
+          .value {
+            color: red;
+          }
+        }
+      }
+
+      .price:first-child {
+        margin-left: 0;
+      }
+    }
+
+    .target-summary {
+      display: inline-flex;
+      width: 100%;
+      position: relative;
+      box-sizing: border-box;
+
+      & > div {
+        flex: 1;
+      }
+
+      & > div > div:first-child {
+        font-weight: 900;
+      }
+
+      .target-summary-rem {
+        margin-right: 20px;
+      }
+
+      .target-summary-rev {
+        div:last-child {
+          color: white;
+          font-weight: 900;
+          background-color: $abacus-color-primary;
+          height: 60px;
+          text-align: center;
+          font-size: 30px;
+          line-height: 60px;
+        }
+      }
+    }
+  }
+}

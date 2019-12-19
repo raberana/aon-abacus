@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Abacus.Common;
-using Abacus.Data.Models;
+﻿using System.Threading.Tasks;
 using Abacus.Service.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 
 namespace Abacus.Calculator.Controllers
 {
@@ -16,17 +11,19 @@ namespace Abacus.Calculator.Controllers
     [ApiController]
     public class CalculatorController : ControllerBase
     {
-        private readonly IUserService _userService;
+        private readonly ICalculatorService _calculatorService;
 
-        public CalculatorController(IUserService userService)
+        public CalculatorController(ICalculatorService calculatorService)
         {
-            this._userService = userService;
+            this._calculatorService = calculatorService;
         }
 
-        [HttpGet, Route("{username}")]
-        public IActionResult GetUser(string username)
+        [HttpPost, Route("price-calculation")]
+        public async Task<IActionResult> CalculatePrice([FromBody]dynamic priceInput)
         {
-            return this.Ok();
+            var result = await this._calculatorService.Calculate(JObject.Parse(priceInput.ToString()));
+
+            return this.Ok(result);
         }
     }
 }

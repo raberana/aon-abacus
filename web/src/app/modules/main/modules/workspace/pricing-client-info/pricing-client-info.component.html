@@ -1,11 +1,14 @@
 <div class="form-container">
-    <form [formGroup]="pricingForm">
-        <ng-container *ngFor="let field of sectionSchema.fields">
-            <abacus-generic-field [field]="field" [formGroup]="pricingForm"></abacus-generic-field>
-            <br />
-        </ng-container>
-    </form>
-    <div (click)="get()">
-        <button class="button">GET</button>
+    <div>
+        <form [formGroup]="pricingForm">
+            <ng-container *ngFor="let field of sectionSchema.fields">
+                <abacus-generic-field [field]="field" [formGroup]="pricingForm"></abacus-generic-field>
+                <br />
+            </ng-container>
+        </form>
+        <div>
+            <button class="button" (click)="done()" [disabled]="!pricingForm.valid">Save and continue</button>
+            <button class="button is-white" (click)="clear()">Clear</button>
+        </div>
     </div>
 </div>

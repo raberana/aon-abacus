@@ -1,17 +1,27 @@
 <form [formGroup]="formGroup">
-    <div class="field" *ngIf="field.dataType != 'options'">
-        <label class="label">{{field.label}}</label>
-        <div class="control">
+
+    <ng-container [ngSwitch]="field.dataType">
+
+        <ng-container *ngSwitchCase="'hidden'">
             <input class="input is-medium" [type]="field.dataType" [formControlName]="field.name">
+        </ng-container>
+
+        <div class="field" *ngSwitchCase="'options'">
+            <label class="label">{{field.label}}</label>
+            <div class="select">
+                <select [formControlName]="field.name">
+                    <option value=""></option>
+                    <option [value]="option.value" *ngFor="let option of options">{{option.label}}</option>
+                </select>
+            </div>
         </div>
-    </div>
-    <div class="field" *ngIf="field.dataType == 'options'">
-        <label class="label">{{field.label}}</label>
-        <div class="select">
-            <select [formControlName]="field.name">
-                <option value=""></option>
-                <option [value]="option.value" *ngFor="let option of options">{{option.label}}</option>
-            </select>
+
+        <div class="field" *ngSwitchDefault>
+            <label class="label">{{field.label}}</label>
+            <div class="control">
+                <input class="input is-medium" [type]="field.dataType" [formControlName]="field.name">
+            </div>
         </div>
-    </div>
+
+    </ng-container>
 </form>

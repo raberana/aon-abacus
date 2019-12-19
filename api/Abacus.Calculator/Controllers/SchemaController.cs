@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Abacus.Common;
-using Abacus.Data.Models;
-using Abacus.Service.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Abacus.Calculator.Controllers
@@ -28,26 +22,30 @@ namespace Abacus.Calculator.Controllers
 
             schema.Sections = new List<SchemaSection> {
                 new SchemaSection {
-                    Name = "clientInfo",
+                    Name = "ClientInfo",
                     IsArray = false,
                     Fields = new List<SchemaField> {
-                        new SchemaField { Name = "clientName", DataType= "text", Label= "Client Name" },
-                        new SchemaField { Name = "clientIndustry", DataType= "options", Label= "Client Industry", Lookup= "CLIENTINDUSTRIES" },
-                        new SchemaField { Name = "priorYearPrice", DataType= "number", Label= "Prior Year Price (US$)" },
-                        new SchemaField { Name = "aGRCHours", DataType= "number", Label= "AGRC (Hours)" },
-                        new SchemaField { Name = "dataAnalyticsCharge", DataType= "number", Label= "Data & Analytics Charge (US$)" },
-                        new SchemaField { Name = "aGCNCharge", DataType= "number", Label= "AGCN Charge (Per RAN, US$)" },
+                        new SchemaField { Name = "ClientName", DataType= "text", Label= "Client Name", IsRequired = true },
+                        new SchemaField { Name = "ClientIndustry", DataType= "options", Label= "Client Industry", Lookup= "CLIENTINDUSTRIES", RelatedField = "ClientIndustryText", IsRequired = true },
+                        new SchemaField { Name = "ClientIndustryText", DataType= "hidden" },
+                        new SchemaField { Name = "PriorYearPrice", DataType= "number", Label= "Prior Year Price (US$)", IsRequired = true },
+                        new SchemaField { Name = "AGRCHours", DataType= "number", Label= "AGRC (Hours)", IsRequired = true },
+                        new SchemaField { Name = "DataAnalyticsCharge", DataType= "number", Label= "Data & Analytics Charge (US$)", IsRequired = true },
+                        new SchemaField { Name = "AGCNCharge", DataType= "number", Label= "AGCN Charge (Per RAN, US$)", IsRequired = true },
                     }
                 },
                 new SchemaSection {
-                    Name = "insuranceSchedule",
+                    Name = "InsuranceSchedule",
                     IsArray = true,
                     Fields = new List<SchemaField> {
-                        new SchemaField  { Name = "businessLine", DataType= "options", Label= "Line of Business", Lookup= "BUSINESSLINES" },
-                        new SchemaField  { Name = "premium", DataType= "number", Label= "Premium Amount (US$)" },
-                        new SchemaField  { Name = "policyCount", DataType= "number", Label= "Number of Policies" },
-                        new SchemaField  { Name = "remunerationType", DataType= "options", Label= "Remuneration Type", Lookup= "REMUNERATIONTYPES" },
-                        new SchemaField  { Name = "brokingCenter", DataType= "options", Label= "Broking Center", Lookup= "BROKINGCENTERS" },
+                        new SchemaField  { Name = "BusinessLine", DataType= "options", Label= "Line of Business", Lookup= "BUSINESSLINES", RelatedField = "BusinessLineText", IsRequired = true },
+                        new SchemaField  { Name = "BusinessLineText", DataType= "hidden" },
+                        new SchemaField  { Name = "Premium", DataType= "number", Label= "Premium Amount (US$)", IsRequired = true },
+                        new SchemaField  { Name = "PolicyCount", DataType= "number", Label= "Number of Policies", IsRequired = true },
+                        new SchemaField  { Name = "RemunerationType", DataType= "options", Label= "Remuneration Type", Lookup= "REMUNERATIONTYPES", RelatedField = "RemunerationTypeText", IsRequired = true },
+                        new SchemaField  { Name = "RemunerationTypeText", DataType= "hidden" },
+                        new SchemaField  { Name = "BrokingCenter", DataType= "options", Label= "Broking Center", Lookup= "BROKINGCENTERS", RelatedField = "BrokingCenterText" },
+                        new SchemaField  { Name = "BrokingCenterText", DataType= "hidden" }
                     }
                 }
             };

@@ -20,12 +20,14 @@ export class GenericFieldComponent implements OnInit, OnDestroy {
   constructor(private _referentialService: ReferentialLookupService) { }
 
   ngOnInit() {
+    this.setupField();
+  }
+
+  setupField() {
     if (this.field.dataType == 'options') {
       this.referentialSubscription = this._referentialService.getReferentialLookup(this.field.lookup)
         .subscribe(i => {
-          console.log('i', i);
           this.options = i.map<{ value: string, label: string }>(r => { return { value: r.value, label: r.label } });
-          console.log('options', this.options);
         });
     }
   }

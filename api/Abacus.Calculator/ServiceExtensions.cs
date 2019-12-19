@@ -1,16 +1,14 @@
 ﻿using Abacus.Common;
 using Abacus.Repository;
 using Abacus.Repository.Interfaces;
+using Abacus.Service;
+using Abacus.Service.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Abacus.Calculator
 {
@@ -80,6 +78,12 @@ namespace Abacus.Calculator
         public static void ConfigureDataAccessLayers(this IServiceCollection services)
         {
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+
+            services.AddTransient<ITargetPriceCalculatorService, TargetPriceCalculatorService>();
+
+            services.AddTransient<ITargetHoursCalculatorService, TargetHoursCalculatorService>();
+
+            services.AddTransient<ICalculatorService, CalculatorService>();
         }
     }
 }

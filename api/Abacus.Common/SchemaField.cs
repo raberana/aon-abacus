@@ -10,6 +10,8 @@ namespace Abacus.Common
         public string DataType { get; set; }
         public string Lookup { get; set; }
         public string Label { get; set; }
+        public string RelatedField { get; set; }
+        public bool IsRequired { get; set; }
         public SchemaField() { }
     }
 }

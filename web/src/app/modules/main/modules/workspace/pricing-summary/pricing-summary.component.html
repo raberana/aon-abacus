@@ -1,0 +1,50 @@
+<div id="summary-container" *ngIf="priceOutput">
+    <div>
+        <h2>CLIENT PRICING POINTS (US Retained)</h2>
+        <br />
+        <h1>{{priceOutput.ClientName}}</h1>
+        <h2>{{priceOutput.ClientIndustry}} - <span>{{priceOutput.TotalPremium | currency}}</span></h2>
+        <br />
+        <div class="target-prices">
+            <div class="price" *ngFor="let price of priceOutput.TargetPrice.Pricings">
+                <div class="price-name">{{price.Name}}</div>
+                <div class="price-estimate">
+                    <div class="label">Price Estimate (US$)</div>
+                    <div class="value">{{price.PriceEstimate | currency}}</div>
+                </div>
+                <div class="price-yield-estimate">
+                    <div class="label">Price Yield Estimate (%)</div>
+                    <div class="value">{{price.PriceYieldEstimate | percent}}</div>
+                </div>
+                <div class="price-client-variance" [ngClass]="{ 'negative':price.ClientVariance < 0 }">
+                    <div class="label">Client Price Variance (Discount)</div>
+                    <div class="value">{{price.ClientVariance | percent}}</div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="target-summary">
+            <div class="target-summary-rem">
+                <div>Proposed Remuneration:</div>
+                <div>[User input required, US$ Inluding AGCN Charge]</div>
+                <div>
+                    <input class="input is-large" type="text">
+                </div>
+            </div>
+            <div class="target-summary-rev">
+                <div>US Retained Revenue</div>
+                <div>[Proposed Remuneration - AGCN Charge, US$]</div>
+                <div>
+                    {{priceOutput.TargetPrice.RetainedRevenue}}
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div>
+            Less: AGCN Allocation - {{priceOutput.TargetPrice.LessAGCNAllocation | currency}}
+        </div>
+    </div>
+</div>
